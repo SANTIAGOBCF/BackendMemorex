@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "memorex"
+version = "0.1.0"
+description = ""
+authors = ["warevil <60890246+warevil@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.1.2"
+django-ninja = "^0.19.1"
+faketory = "^0.1.2"
+PyJWT = "^2.6.0"
+python-dotenv = "^0.21.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+flake8 = "^5.0.4"
+isort = "^5.10.1"
+pre-commit = "^2.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

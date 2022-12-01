@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Activate virtual environment
+source _/bin/activate
+
+./manage.py runserver
