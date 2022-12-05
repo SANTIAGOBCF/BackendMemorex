@@ -19,3 +19,5 @@ Rest API written in Python to work as Memorex Server.
 
 1. Run `./run`
 1. Visit `http://127.0.0.1:8000/api/docs`
+
+[Python]: <https://www.python.org/downloads/>
