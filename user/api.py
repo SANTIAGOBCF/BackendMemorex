@@ -21,6 +21,9 @@ router = Router()
     response=ResponseUser,
 )
 def get_my_account(request):
+    """
+    Get my user profile.
+    """
     return request.user
 
 
@@ -31,7 +34,7 @@ def get_my_account(request):
 )
 def patch_my_account(request, data: PayloadPatchMyAccount):
     """
-    Edit user account.
+    Edit my user account.
     """
     user = request.user
     patch_data = data.dict(exclude_unset=True)
@@ -75,7 +78,6 @@ def login(request, data: PayloadPostLoginUser):
     """
     error_msg = "Your email and/or password are wrong."
     user = get_object_or_404(User, email=data.email)
-
     if user.check_password(data.password):
         return get_jwt_token(user)
 
