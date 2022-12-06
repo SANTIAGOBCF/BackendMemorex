@@ -4,7 +4,8 @@ from django.test import TestCase
 from faker import Faker
 
 from core.utils import encode_jwt_token, format_url
-from user.factories import UserFactory
+from politician.tests.factories import FactoryPolitician
+from user.tests.factories import FactoryUser
 
 _fake = Faker()
 
@@ -26,8 +27,11 @@ class ClientBaseTestCase(TestCase):
         token = encode_jwt_token(payload)
         return {'HTTP_AUTHORIZATION': f'Bearer {token}'}
 
+    def add_politician(self, **fields):
+        return FactoryPolitician(_resolver='save')
+
     def add_user(self, **fields):
-        return UserFactory(_resolver='save')
+        return FactoryUser(_resolver='save')
 
     def _http_method(
         self,

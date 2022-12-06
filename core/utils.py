@@ -33,3 +33,11 @@ def get_jwt_token(user):
     payload = {'id': str(user.id)}
     access_token = encode_jwt_token(payload)
     return access_token
+
+
+def get_paginated_queryset(queryset, limit, offset):
+    if limit and offset:
+        return queryset[offset : offset + limit]  # noqa
+    if limit and not offset:
+        return queryset[:limit]
+    return queryset
