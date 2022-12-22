@@ -18,7 +18,6 @@ cloudinary.config(
 def upload(request, file: UploadedFile = File(...)):
     data = file.read()
     nameImage=file.name
-
     cloudinary.uploader.upload(data,public_id=nameImage, overwrite=True)
     # Build the URL for the image and save it in the variable 'srcURL'
     #srcURL = cloudinary.CloudinaryImage(nameImage).build_url()
