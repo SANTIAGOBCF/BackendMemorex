@@ -3,7 +3,7 @@ from ninja import NinjaAPI
 from politician.api import router as politician_router
 from post.api import router as post_router
 from user.api import router as user_router
-from imageApp.api import router as image_router
+from image_uploader.api import router as image_router
 
 from .constants import Routers
 
