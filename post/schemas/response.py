@@ -1,18 +1,14 @@
-from ninja import ModelSchema
+from typing import List
 
-from post.models import Post
+from ninja import Schema
+
+from .common import SchemaPost
 
 
-class ResponsePost(ModelSchema):
-    class Config:
-        model = Post
-        model_fields = [
-            'id',
-            'created_at',
-            'date',
-            'image',
-            'source',
-            'text',
-            'title',
-            'updated_at',
-        ]
+class ResponseGetPostList(Schema):
+    posts: List[SchemaPost]
+    count: int
+
+
+class ResponsePostAddPost(SchemaPost):
+    pass
