@@ -145,4 +145,3 @@ tramp
 sftp-config.json
 
 # database
-db.sqlite3
