@@ -2,7 +2,7 @@ class Routers:
     POLITICIAN = 'politician/'
     POST = 'post/'
     USER = 'user/'
-    IMAGEUPLOAD='image/'
+    IMAGEUPLOAD = 'image/'
 
 
 class NinjaApi:
