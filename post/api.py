@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from ninja import Query, Router
 
 from core.filters import FilterPagination
@@ -10,6 +11,16 @@ from .schemas.payload import PayloadPostAddPost
 from .schemas.response import ResponseGetPostList, ResponsePostAddPost
 
 router = Router()
+
+
+@router.delete(
+    Endpoints.DELETE_POST,
+    response=str,
+)
+def delete_post(request, id):
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return f'Post #{id} was deleted'
 
 
 @router.post(
