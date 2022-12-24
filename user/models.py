@@ -17,10 +17,10 @@ class User(AbstractBaseUser, TimeStampedModel):
         unique=True,
         error_messages={"unique": _("A user with that email address already exists.")},
     )
-    first_name = models.CharField(max_length=60)
-    last_name = models.CharField(max_length=60)
-    profile_image = models.CharField(max_length=100, null=True)
-    role = models.CharField(max_length=60)
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
+    profile_image = models.CharField(max_length=250, null=True)
+    role = models.CharField(max_length=80)
 
     objects = CustomUserManager()
 
