@@ -44,6 +44,7 @@ def patch_my_account(request, data: PayloadPatchMyAccount):
     for key, value in patch_data.items():
         setattr(user, key, value)
 
+    user.save()
     return user
 
 

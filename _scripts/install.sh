@@ -10,6 +10,5 @@ source _/bin/activate
 
 pip install --upgrade pip
 # Install poetry, then use it to install dependencies
-pip install poetry
-poetry install
-poetry run pre-commit install
+pip install -r requirements.txt
+pre-commit install

@@ -36,6 +36,7 @@ def patch_politician(request, data: PayloadPatchPolitician, id):
     patch_data = data.dict(exclude_unset=True)
     for key, value in patch_data.items():
         setattr(politician, key, value)
+    politician.save()
     return politician
 
 
