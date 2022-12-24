@@ -13,7 +13,7 @@ class Post(TimeStampedModel):
     politician = models.ForeignKey(Politician, on_delete=models.CASCADE)
 
     date = models.DateField()
-    image = models.CharField(max_length=100)
-    source = models.CharField(max_length=200)
-    text = models.CharField(max_length=450)
-    title = models.CharField(max_length=50)
+    image = models.CharField(max_length=250)
+    source = models.CharField(max_length=250)
+    text = models.CharField(max_length=600)
+    title = models.CharField(max_length=120)
